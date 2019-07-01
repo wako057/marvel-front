@@ -4,7 +4,8 @@
   "description": "Api that fetch marvel's heros info",
   "main": "server.js",
   "scripts": {
-    "server:dev": "$(npm bin)/nodemon server.js"
+    "server:dev": "$(npm bin)/nodemon server.js",
+    "tests:syntax": "$(npm bin)/eslint ./src ./tests"
   },
   "repository": {
     "type": "git",
