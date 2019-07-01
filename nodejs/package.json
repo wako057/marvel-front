@@ -1,0 +1,30 @@
+{
+  "name": "marvel-api",
+  "version": "0.0.1",
+  "description": "Api that fetch marvel's heros info",
+  "main": "server.js",
+  "scripts": {
+    "server:dev": "$(npm bin)/nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://git@github.com:wako057/travelcar.git"
+  },
+  "keywords": [
+    "api",
+    "travelcar"
+  ],
+  "author": "Gregory GERARD",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/wako057/travelcar/issues"
+  },
+  "homepage": "https://github.com/wako057/travelcar#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "nodemon": "^1.19.1"
+  }
+}
