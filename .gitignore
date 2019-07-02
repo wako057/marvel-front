@@ -1,6 +1,7 @@
 #nodejs
 node_modules
-
+config.json
+logs
 
 #angular ignore
 # compiled output
