@@ -1,0 +1,11 @@
+{
+  "logs": {
+    "name": "marvel-api",
+    "files": {
+      "enable": true,
+      "path": "logs/",
+      "name": "wako057-marvel_api",
+      "level": "info"
+    }
+  }
+}

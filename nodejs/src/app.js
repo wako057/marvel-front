@@ -1,16 +1,19 @@
 "use strict";
 
-// const env = process.env.NODE_ENV || "production";
-const port = process.env.NODE_PORT || 8080;
+const express = require("express")();
+const http = require("http").Server(express);
 
-const express = require("express");
-const app = express();
+const routes = require("./routes/index");
 
-const server = app.listen(port, () => {
-    console.log(`
-    Process ${process.pid} is listening to all incoming requests on port ${port},
-    workerProcess: ${process.pid}
-`);
-});
+const init = (config, loggers) => {
 
-module.exports = server;
+    express.use(loggers.morganMiddleware); // Middleware to create access.log styled logs
+    express.use(loggers.loggerMiddleware); // Middleware to add logger in request object
+    express.use("/v1", routes());
+
+    return http;
+};
+
+module.exports = init;
+
+

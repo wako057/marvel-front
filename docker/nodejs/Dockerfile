@@ -1,6 +1,6 @@
 FROM node:10-alpine
 
-RUN apk add --no-cache git bash jq vim
+RUN apk add --no-cache curl git bash jq vim
 
 RUN mkdir -p /var/nodejs/marvel-api-node/current && chown -R node:node /var/nodejs/marvel-api-node/current
 
@@ -16,6 +16,6 @@ RUN chmod +x /usr/local/bin/run.sh && \
 RUN npm install
 
 EXPOSE 8080
-#HEALTHCHECK --interval=5s --timeout=20s --retries=1 CMD healthcheck.sh
+HEALTHCHECK --interval=5s --timeout=20s --retries=1 CMD healthcheck.sh
 
 CMD [ "/usr/local/bin/run.sh" ]
