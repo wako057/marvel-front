@@ -7,5 +7,17 @@
       "name": "wako057-marvel_api",
       "level": "info"
     }
-  }
+  },
+  "parameters": {
+    "limit": {
+      "default": 200
+    }
+  },
+  "marvel": {
+  "baseUrl": "https://gateway.marvel.com:443/v1/public/",
+  "charactersEndpoint": "characters",
+  "timeout": 5000,
+  "publicKey": "",
+  "privateKey": ""
+}
 }
