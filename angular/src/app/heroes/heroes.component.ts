@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from "../hero";
 import { HeroService } from "../hero.service";
-import { MessageService } from "../message.service";
+// import { MessageService } from "../message.service";
+import { AccessMarvel } from "../access-marvel";
+import {tap} from "rxjs/operators";
 
 @Component({
   selector: 'app-heroes',
@@ -12,8 +14,9 @@ import { MessageService } from "../message.service";
 export class HeroesComponent implements OnInit {
   selectedHero: Hero;
   heroes: Hero[];
+  access: AccessMarvel;
 
-  constructor(private heroService: HeroService, private messageService: MessageService) { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit() {
     this.getHeroes()
@@ -21,9 +24,15 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes()
-      .subscribe(answer => this.heroes = answer.data.results);
+      .subscribe(answer => {
+        console.log(answer);
+        this.heroes = answer.data.results;
+        this.access = answer.data.access;
 
-    this.messageService.add(JSON.stringify(this.heroes));
+      })
+    ;
+
+    // this.messageService.add(JSON.stringify(this.heroes));
   }
 
   onSelect(hero: Hero): void {

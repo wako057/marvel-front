@@ -29,8 +29,7 @@ export class HeroService {
   }
 
   getHeroes(): Observable<HeroAnswerData> {
-    this.messageService.add('HeroService: fetched heroes');
-    // this.log('blublu' + this.config.baseUrl + this.config.charactersEndpoint);
+    this.messageService.add('HeroService: fetched heroes blu');
 
     return this.http.get<HeroAnswerData>('http://localhost:8080/v1/heroes');
   }

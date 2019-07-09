@@ -29,9 +29,12 @@ class Hero {
 
         return this.requester.get(this.config.charactersEndpoint, { params: queryString })
             .then(resp => {
-                resp.data.access = queryString;
+                // resp.data.access = queryString;
                 // console.log(resp.data);
-                return Promise.resolve(resp.data);
+                let data2 = Object.assign(resp.data.data, { access: queryString });
+                let res = Object.assign(resp.data,  {data: data2});
+                console.log(res);
+                return Promise.resolve(res);
             })
             .catch(error => {
                 return Promise.reject(error);
