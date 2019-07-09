@@ -38,7 +38,7 @@ router.get("/", (req, res, next) => {
     // //
     return hero.list()
         .then(results => {
-            console.log("On a reussi a lister les hero", JSON.stringify(results, 0, 2));
+            console.log("On a reussi a lister les hero, nb heroes: ", results.data.results.length);
             res.status(200).send(results);
         })
         .catch(error => {
@@ -49,7 +49,7 @@ router.get("/", (req, res, next) => {
     //     .then(() => {
     //         return hero.count();
     //     })
-        // .then(total => {
+    //     .then(total => {
     //         range.setTotal(total.count);
     //         return hero.list(range.offset, range.limit);
     //     })
