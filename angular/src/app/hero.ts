@@ -4,8 +4,10 @@ import {Series} from "./series";
 import {Stories} from "./stories";
 import {HeroesEvents} from "./heroes-events";
 import {HeroesUrl} from "./heroes-url";
+import {MarvelAnswer} from "./marvel-answer";
 
-export class Hero {
+export class Hero extends MarvelAnswer {
+
   id: number;
   name: string;
   description: string;
