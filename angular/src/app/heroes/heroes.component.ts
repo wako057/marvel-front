@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from "../hero";
 import { HeroService } from "../hero.service";
-// import { MessageService } from "../message.service";
 import { AccessMarvel } from "../access-marvel";
-import {tap} from "rxjs/operators";
+
 
 @Component({
   selector: 'app-heroes',
@@ -28,11 +27,7 @@ export class HeroesComponent implements OnInit {
         console.log(answer);
         this.heroes = answer.data.results;
         this.access = answer.data.access;
-
-      })
-    ;
-
-    // this.messageService.add(JSON.stringify(this.heroes));
+      });
   }
 
   onSelect(hero: Hero): void {
