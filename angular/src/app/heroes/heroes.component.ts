@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from "../hero";
 import { HeroService } from "../hero.service";
-import {HttpClient} from "@angular/common/http";
-import {MessageService} from "../message.service";
+import { MessageService } from "../message.service";
 
 @Component({
   selector: 'app-heroes',
@@ -22,7 +21,7 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
+      .subscribe(answer => this.heroes = answer.data.results);
 
     this.messageService.add(JSON.stringify(this.heroes));
   }
