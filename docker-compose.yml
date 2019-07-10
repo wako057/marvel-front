@@ -12,3 +12,15 @@ services:
       NODE_ENV: development
       ENV_LOG_LEVEL: trace
       ENV_LOG_DISABLE_STATUS: 1
+
+  marvel-front-ng:
+    build: docker/angular
+    volumes:
+      - ./angular:/var/nodejs/marvel-front-ng/current
+    ports:
+      - 4200:4200
+#    environment:
+#      NODE_PORT: 8080
+#      NODE_ENV: development
+#      ENV_LOG_LEVEL: trace
+#      ENV_LOG_DISABLE_STATUS: 1
