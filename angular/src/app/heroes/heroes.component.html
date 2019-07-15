@@ -1,17 +1,49 @@
 <h2>My Heroes</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes"
-       [class.selected]="hero === selectedHero"
-       (click)="onSelect(hero)">
-    <div>
-      <span class="badge">{{hero.id}}</span>
-      <span>{{hero.name}}</span>
-      <span>{{hero.description}}</span>
-      <span>{{hero.modified}}</span>
-      <span>{{hero.resourceURI}}</span>
-      <span><img src="{{ hero.thumbnail.path}}/portrait_xlarge.{{hero.thumbnail.extension}}" /></span>
-    </div>
-  </li>
-</ul>
+
+<div fxFill fxLayout="column" fxLayoutAlign="space-between">
+  <mat-paginator [length]="paginatorInfos.total"
+                 [pageSize]="paginatorInfos.count"
+                 [pageIndex]="paginatorInfos.pageIndex"
+                 [pageSizeOptions]="[20, 50, 100]"
+                 (page)="pageEvent = getServerData($event)">
+  </mat-paginator>
+
+  <div fxLayout="row wrap">
+    <ng-container *ngFor="let hero of heroes">
+      <div id="hero-presentation">
+        <span>{{hero.name}}</span>
+        <span><img src="{{ hero.thumbnail.path}}/portrait_xlarge.{{hero.thumbnail.extension}}" /></span>
+      </div>
+    </ng-container>
+  </div>
+
+<!--  <mat-paginator [length]="resultsHeroes.data.total"-->
+<!--                 [pageSize]="paginatorInfos.count"-->
+<!--                 [pageIndex]="page"-->
+<!--                 [pageSizeOptions]="[20, 50, 100]"-->
+<!--                 (page)="getData($event)">-->
+<!--  </mat-paginator>-->
+</div>
+
+<!--<div *ngIf = "pageEvent">-->
+<!--  <h5>Page Change Event</h5>-->
+<!--  <div>List length: {{pageEvent.length}}</div>-->
+<!--  <div>Page size: {{pageEvent.pageSize}}</div>-->
+<!--  <div>Page index: {{pageEvent.pageIndex}}</div>-->
+<!--</div>-->
+<!--<ul class="heroes">-->
+<!--  <li *ngFor="let hero of heroes"-->
+<!--       [class.selected]="hero === selectedHero"-->
+<!--       (click)="onSelect(hero)">-->
+<!--    <div>-->
+<!--      <span class="badge">{{hero.id}}</span>-->
+<!--      <span>{{hero.name}}</span>-->
+<!--      <span>{{hero.description}}</span>-->
+<!--      <span>{{hero.modified}}</span>-->
+<!--      <span>{{hero.resourceURI}}</span>-->
+<!--      <span><img src="{{ hero.thumbnail.path}}/portrait_xlarge.{{hero.thumbnail.extension}}" /></span>-->
+<!--    </div>-->
+<!--  </li>-->
+<!--</ul>-->
 
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
