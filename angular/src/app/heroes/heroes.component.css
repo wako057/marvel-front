@@ -1,0 +1,5 @@
+#hero-presentation {
+  display:inline-block;
+}
+
+#hero-presentation > span {display: block}
