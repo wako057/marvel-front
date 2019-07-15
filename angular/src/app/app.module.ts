@@ -16,7 +16,8 @@ import {
   MatSidenavModule,
   MatListModule,
   MatButtonModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatCardModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -42,7 +43,8 @@ import { AboutComponent } from './about/about.component';
     MatButtonModule,
     MatIconModule,
     AppRoutingModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
