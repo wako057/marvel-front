@@ -10,7 +10,14 @@ import { MessagesComponent } from './messages/messages.component';
 import { ConfigComponent } from './config/config.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
+import {
+  MatToolbarModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatListModule,
+  MatButtonModule,
+  MatPaginatorModule
+} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './about/about.component';
@@ -34,7 +41,8 @@ import { AboutComponent } from './about/about.component';
     MatListModule,
     MatButtonModule,
     MatIconModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
