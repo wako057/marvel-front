@@ -3,3 +3,17 @@
 }
 
 #hero-presentation > span {display: block}
+
+.example-card {
+  width: 135px;
+  height: 250px;
+  display:inline-block;
+}
+
+.example-card-title {height: 25px; overflow:hidden}
+
+.example-header-image {
+  /*background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');*/
+  background-size: cover;
+  max-width: 120px
+}
