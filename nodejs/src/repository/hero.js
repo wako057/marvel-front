@@ -50,7 +50,6 @@ class Hero {
             .then(resp => {
                 let data2 = Object.assign(resp.data.data, { access: queryString });
                 let res = Object.assign(resp.data, { data: data2 });
-                // console.log(res);
                 return Promise.resolve(res);
             })
             .catch(error => {
