@@ -1,1 +1,33 @@
+<h2>My Comics</h2>
+
+<div fxFill fxLayout="column" fxLayoutAlign="space-between">
+  <mat-paginator [length]="paginatorInfos.total"
+                 [pageSize]="paginatorInfos.count"
+                 [pageIndex]="paginatorInfos.pageIndex"
+                 [pageSizeOptions]="[20, 50, 100]"
+                 (page)="pageEvent = getServerData($event)">
+  </mat-paginator>
+
+  <div fxLayout="row wrap">
+    <ng-container *ngFor="let hero of heroes">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title class="example-card-title">{{hero.name}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-card-title></mat-card-title>
+        </mat-card-content>
+        <img mat-card-image src="{{ hero.thumbnail.path}}/portrait_xlarge.{{hero.thumbnail.extension}}" />
+      </mat-card>
+    </ng-container>
+  </div>
+
+  <mat-paginator [length]="paginatorInfos.total"
+                 [pageSize]="paginatorInfos.count"
+                 [pageIndex]="paginatorInfos.pageIndex"
+                 [pageSizeOptions]="[20, 50, 100]"
+                 (page)="pageEvent = getServerData($event)">
+  </mat-paginator>
+
+</div>
 <p>comics works!</p>

@@ -5,12 +5,9 @@
     </button>
     <h1>Welcome to {{ title }}!</h1>
     <span class="menu-spacer"></span>
-
-      <span class="marginLR10"><a mat-cell [routerLink]="'/heroes'"> Heroes </a></span>
-    <div>
-      <span class="marginLR10"><a mat-cell [routerLink]="'/about'"> About</a></span>
-<!--      <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>-->
-    </div>
+    <span class="marginLR10"><a mat-cell [routerLink]="'/heroes'"> Heroes </a></span>
+    <span class="marginLR10"><a mat-cell [routerLink]="'/comics'"> Comics </a></span>
+    <span class="marginLR10"><a mat-cell [routerLink]="'/about'"> About</a></span>
   </mat-toolbar-row>
 <!--  <mat-toolbar-row>-->
 <!--    <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>-->
@@ -48,5 +45,5 @@
 <!--<router-outlet></router-outlet>-->
 
 <!--&lt;!&ndash;  <app-heroes></app-heroes>&ndash;&gt;-->
-<!--<app-messages></app-messages>-->
+<app-messages></app-messages>
 
