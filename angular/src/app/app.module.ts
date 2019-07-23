@@ -1,13 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {FormsModule} from "@angular/forms";
-import { HttpClientModule }    from '@angular/common/http';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { ConfigComponent } from './config/config.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
@@ -23,6 +22,12 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { ComicsComponent } from './comics/comics.component';
+import { ConfigurationService } from './services/configuration.service';
+
+
+export function configurationInit(config: ConfigurationService) {
+  return () => config.init();
+}
 
 @NgModule({
   declarations: [
@@ -30,7 +35,6 @@ import { ComicsComponent } from './comics/comics.component';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    ConfigComponent,
     AboutComponent,
     ComicsComponent
   ],
@@ -48,7 +52,14 @@ import { ComicsComponent } from './comics/comics.component';
     MatPaginatorModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: configurationInit,
+      multi: true,
+      deps: [ConfigurationService],
+
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
