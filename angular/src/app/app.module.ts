@@ -22,6 +22,7 @@ import {
 
 import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './about/about.component';
+import { ComicsComponent } from './comics/comics.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AboutComponent } from './about/about.component';
     HeroDetailComponent,
     MessagesComponent,
     ConfigComponent,
-    AboutComponent
+    AboutComponent,
+    ComicsComponent
   ],
   imports: [
     BrowserModule,
