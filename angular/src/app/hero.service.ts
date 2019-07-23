@@ -16,12 +16,6 @@ export class HeroService {
 
   constructor(private http: HttpClient, private messageService: MessageService) {
 
-    // this.configService.getConfig()
-    //   .subscribe((data: Config) => {
-    //     this.config = { ...data };
-    //     this.log(JSON.stringify(data));
-    //     this.log(JSON.stringify(this.config));
-    //   });
   }
 
   private log(message: string) {
