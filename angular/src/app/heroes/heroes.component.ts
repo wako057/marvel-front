@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from "../hero";
-import { HeroService } from "../hero.service";
-import { AccessMarvel } from "../access-marvel";
-import { HeroAnswerData } from "../hero-answer-data";
-import { PaginatorInfos } from "../paginatorInfos";
-import { PageEvent } from "@angular/material";
-import {HttpClient} from "@angular/common/http";
-import {MessageService} from "../message.service";
+import { Hero } from '../hero';
+import { HeroService } from '../services/hero.service';
+import { AccessMarvel } from '../access-marvel';
+import { HeroAnswerData } from '../hero-answer-data';
+import { PaginatorInfos } from '../paginatorInfos';
+import { PageEvent } from '@angular/material';
+import {MessageService} from '../services/message.service';
 
 
 @Component({
@@ -28,18 +27,16 @@ export class HeroesComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.getData({pageIndex: this.page, pageSize: this.size});
-    // this.debugPaginator();
-    this.getHeroes()
+    this.getHeroes();
   }
 
   private debugPaginator() {
-    this.messageService.add("--------------------------------------");
-    this.messageService.add("this.paginatorInfos.pageIndex: " + this.paginatorInfos.pageIndex);
-    this.messageService.add("this.paginatorInfos.offset: " + this.paginatorInfos.offset);
-    this.messageService.add("this.paginatorInfos.limit : " + this.paginatorInfos.limit );
-    this.messageService.add("this.paginatorInfos.total: " + this.paginatorInfos.total);
-    this.messageService.add("this.paginatorInfos.count: " + this.paginatorInfos.count);
+    this.messageService.add('--------------------------------------');
+    this.messageService.add('this.paginatorInfos.pageIndex: ' + this.paginatorInfos.pageIndex);
+    this.messageService.add('this.paginatorInfos.offset: ' + this.paginatorInfos.offset);
+    this.messageService.add('this.paginatorInfos.limit : ' + this.paginatorInfos.limit );
+    this.messageService.add('this.paginatorInfos.total: ' + this.paginatorInfos.total);
+    this.messageService.add('this.paginatorInfos.count: ' + this.paginatorInfos.count);
   }
 
   private setHeroServiceAnswer(answer: HeroAnswerData) {
@@ -52,7 +49,7 @@ export class HeroesComponent implements OnInit {
     this.access = answer.data.access;
   }
 
-  public getServerData(event?:PageEvent){
+  public getServerData(event?: PageEvent) {
 
     console.log(event);
 

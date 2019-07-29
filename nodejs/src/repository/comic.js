@@ -1,7 +1,7 @@
 "use strict";
 
-var md5 = require('md5');
-const axios = require('axios');
+const md5 = require("md5");
+const axios = require("axios");
 
 class Hero {
     constructor (logger, config) {
@@ -24,7 +24,7 @@ class Hero {
             limit: 1
         };
 
-        return this.requester.get(this.config.charactersEndpoint, { params: queryString })
+        return this.requester.get(this.config.comicsEndpoint, { params: queryString })
             .then(resp => {
                 return Promise.resolve(resp.data.data);
             })
@@ -46,7 +46,7 @@ class Hero {
         };
 
         return this.requester
-            .get(this.config.charactersEndpoint, { params: queryString })
+            .get(this.config.comicsEndpoint, { params: queryString })
             .then(resp => {
                 let data2 = Object.assign(resp.data.data, { access: queryString });
                 let res = Object.assign(resp.data, { data: data2 });

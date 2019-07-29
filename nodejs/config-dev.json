@@ -25,6 +25,7 @@
   "marvel": {
     "baseUrl": "https://gateway.marvel.com:443/v1/public/",
     "charactersEndpoint": "characters",
+    "comicsEndpoint": "comics",
     "timeout": 5000,
     "publicKey": "",
     "privateKey": ""
