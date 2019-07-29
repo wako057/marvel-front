@@ -31,7 +31,7 @@ export class HeroService {
         'X-Range':  `items=${offset + 1}-${offset + count}`
       })
     };
-    this.messageService.add(`${this.serviceUrl}/${this.config.get('characterEndpoint')}`);
-    return this.http.get<HeroAnswerData>(`${this.serviceUrl}/${this.config.get('characterEndpoint')}`, httpOptions);
+    this.messageService.add(`${this.serviceUrl}/${this.config.get('charactersEndpoint')}`);
+    return this.http.get<HeroAnswerData>(`${this.serviceUrl}/${this.config.get('charactersEndpoint')}`, httpOptions);
   }
 }

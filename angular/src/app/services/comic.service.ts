@@ -10,6 +10,7 @@ import {ConfigurationService} from "./configuration.service";
   providedIn: 'root'
 })
 export class ComicService {
+  private readonly serviceUrl: string;
 
   constructor(private http: HttpClient, private messageService: MessageService, private config: ConfigurationService) {
     this.config = config;

@@ -9,15 +9,15 @@
   </mat-paginator>
 
   <div fxLayout="row wrap">
-    <ng-container *ngFor="let hero of heroes">
+    <ng-container *ngFor="let comic of comics">
       <mat-card class="example-card">
         <mat-card-header>
-          <mat-card-title class="example-card-title">{{hero.name}}</mat-card-title>
+          <mat-card-title class="example-card-title">{{comic.title}}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <mat-card-title></mat-card-title>
         </mat-card-content>
-        <img mat-card-image src="{{ hero.thumbnail.path}}/portrait_xlarge.{{hero.thumbnail.extension}}" />
+        <img mat-card-image src="{{ comic.thumbnail.path}}/portrait_xlarge.{{comic.thumbnail.extension}}" />
       </mat-card>
     </ng-container>
   </div>

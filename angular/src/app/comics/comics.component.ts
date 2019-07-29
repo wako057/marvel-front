@@ -40,7 +40,7 @@ export class ComicsComponent implements OnInit {
 
     this.comicService.getComics(event.pageIndex * event.pageSize, event.pageSize)
       .subscribe(answer => {
-          // console.log(answer);
+          console.log(answer);
           this.setComicServiceAnswer(answer);
         },
         error =>{
