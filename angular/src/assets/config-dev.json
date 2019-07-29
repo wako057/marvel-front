@@ -1,0 +1,10 @@
+{
+  "baseUrl": "https://localhost:8080/v1",
+  "hostProtocol": "http",
+  "hostApi": "localhost",
+  "hostApiPort": "8080",
+  "hostBaseUrl": "/v1",
+  "charactersEndpoint": "heroes",
+  "comicsEndpoint": "comics",
+  "timeout": 5000
+}
