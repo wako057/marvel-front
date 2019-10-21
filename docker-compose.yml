@@ -3,9 +3,9 @@ version: '3.7'
 services:
 
   marvel-front-ng:
-    build: ${MARVEL_PATH:-.}/docker
+    build: ${MARVEL_FRONT_PATH:-.}/docker
     volumes:
-      - ${MARVEL_PATH:-.}/angular:/var/nodejs/marvel-front-ng/current
+      - ${MARVEL_FRONT_PATH:-.}/:/var/nodejs/marvel-front-ng/current
     expose:
       - 8080
     labels:
