@@ -1,8 +1,8 @@
 {
-  "baseUrl": "https://localhost:8080/v1",
+  "baseUrl": "http://api-marvel.wako057.net/v1",
   "hostProtocol": "http",
-  "hostApi": "localhost",
-  "hostApiPort": "8080",
+  "hostApi": "api-marvel.wako057.net",
+  "hostApiPort": "80",
   "hostBaseUrl": "/v1",
   "charactersEndpoint": "heroes",
   "comicsEndpoint": "comics",

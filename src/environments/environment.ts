@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false
+  // ,
+  // apiUrl: 'http://marvel.wako057.net'
 };
 
 /*
