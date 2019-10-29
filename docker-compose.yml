@@ -4,6 +4,7 @@ services:
 
   marvel-front-ng:
     build: ${MARVEL_FRONT_PATH:-.}/docker
+    image: nexus.wako057.net:18442/marvel-front-ng:1.0
     volumes:
       - ${MARVEL_FRONT_PATH:-.}/:/var/nodejs/marvel-front-ng/current
     expose:
