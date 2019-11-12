@@ -19,8 +19,8 @@ ou
 
 ### Wakodock
 
-- wakodock marvel-api build marvel-front-ng
-- wakodock marvel-api push marvel-front-ng
+- wakodock marvel build marvel-front-ng
+- wakodock marvel push marvel-front-ng
 
 
 ### Docker classic
