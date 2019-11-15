@@ -47,11 +47,11 @@ node {
         stage('Jenkins Artifacts') {
           common.createArtifacts()
         }
-//
-//         stage('Package app') {
-//           def options = '--exclude=./docker --exclude=./docker-compose.*'
-//           common.createArchive(APP_NAME, APP_COMMIT, BUILD_ID, options)
-//         }
+
+        stage('Package app') {
+          def options = '--exclude=./docker --exclude=./docker-compose.*'
+          common.createArchive(APP_NAME, APP_COMMIT, BUILD_ID, options)
+        }
 
 //         stage('Send artifacts to Nexus') {
 //           common.moveArchiveInProjet([
