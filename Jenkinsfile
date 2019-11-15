@@ -1,3 +1,4 @@
+#!groovy
 
 @Library('jenkins-pipeline-libs') _
 def common = new net.wako057.Common()
@@ -12,6 +13,7 @@ node {
       registry = "nexus.wako057.net:18442/marvel-front-ng"
       registryCredential = "9a37329c-39f3-47c0-b173-e0321f9225d3"
   }
+
   docker.withRegistry("http://nexus.wako057.net") {
     wrap([$class: 'AnsiColorBuildWrapper']) {
       // Define docker image for slave
@@ -50,16 +52,30 @@ node {
 
         stage('Package app') {
           def options = '--exclude=./docker --exclude=./docker-compose.*'
+          echo("Send artifacts to Nexus AVANT le move")
           common.createArchive(APP_NAME, APP_COMMIT, BUILD_ID, options)
+          echo("Send artifacts to Nexus APRES le move")
         }
 
-//         stage('Send artifacts to Nexus') {
-//           common.moveArchiveInProjet([
-//             name: APP_NAME,
-//             commit: APP_COMMIT,
-//             build_id: BUILD_ID
-//           ])
-//
+        stage('Send artifacts to Nexus') {
+          echo("Send artifacts to Nexus AVANT le move")
+//          common.moveArchiveInProjet([
+//            name: APP_NAME,
+//            commit: APP_COMMIT,
+//            build_id: BUILD_ID
+//          ])
+          echo("Send artifacts to Nexus APRES le move")
+
+          common.sendToNexus([
+                      name: APP_NAME,
+                      commit: APP_COMMIT,
+                      build_id: BUILD_ID,
+                      branch_display: common.getNexusBranchName(env.BRANCH_NAME),
+                       repo: common.nexusArtifactUploader(),
+                       group: common.getNexusGroup(),
+                      nexus: NEXUS_URL,
+//                       version: common.buildVersionName()
+          ])
 //           common.sendToNexus([
 //             name: APP_NAME,
 //             commit: APP_COMMIT,
@@ -67,10 +83,10 @@ node {
 //             branch_display: common.getNexusBranchName(env.BRANCH_NAME),
 //             repo: common.getNexusRepo(),
 //             group: common.getNexusGroup(),
-//             nexus: NEXUS2_URL,
+//             nexus: NEXUS_URL,
 //             version: common.buildVersionName()
 //           ])
-//         }
+        }
 
         stage('Clean') {
           deleteDir();
