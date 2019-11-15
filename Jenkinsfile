@@ -44,9 +44,9 @@ node {
           sh 'npm install --production'
         }
 
-//         stage('Jenkins Artifacts') {
-//           common.createArtifacts()
-//         }
+        stage('Jenkins Artifacts') {
+          common.createArtifacts()
+        }
 //
 //         stage('Package app') {
 //           def options = '--exclude=./docker --exclude=./docker-compose.*'
