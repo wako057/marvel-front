@@ -1,4 +1,3 @@
-#!groovy
 
 @Library('jenkins-pipeline-libs') _
 def common = new net.wako057.Common()
@@ -59,11 +58,11 @@ node {
 
         stage('Send artifacts to Nexus') {
           echo("Send artifacts to Nexus AVANT le move")
-//          common.moveArchiveInProjet([
-//            name: APP_NAME,
-//            commit: APP_COMMIT,
-//            build_id: BUILD_ID
-//          ])
+         common.moveArchiveInProjet([
+           name: APP_NAME,
+           commit: APP_COMMIT,
+           build_id: BUILD_ID
+         ])
           echo("Send artifacts to Nexus APRES le move")
 
           common.sendToNexus([
@@ -71,10 +70,10 @@ node {
                       commit: APP_COMMIT,
                       build_id: BUILD_ID,
                       branch_display: common.getNexusBranchName(env.BRANCH_NAME),
-                       repo: common.nexusArtifactUploader(),
-                       group: common.getNexusGroup(),
+                      repo: common.getNexusRepoLabel(),
+                      group: common.getNexusGroup(),
                       nexus: NEXUS_URL,
-//                       version: common.buildVersionName()
+                      version: common.getBuildVersionName()
           ])
 //           common.sendToNexus([
 //             name: APP_NAME,
