@@ -16,9 +16,6 @@ node {
   docker.withRegistry("http://nexus.wako057.net") {
     wrap([$class: 'AnsiColorBuildWrapper']) {
       // Define docker image for slave
-
-
-
       def slave = docker.image('nexus.wako057.net:18442/marvel-front-ng:1.0')
 
       stage('Checkout code') {
@@ -75,16 +72,6 @@ node {
                       nexus: NEXUS_URL,
                       version: common.getBuildVersionName()
           ])
-//           common.sendToNexus([
-//             name: APP_NAME,
-//             commit: APP_COMMIT,
-//             build_id: BUILD_ID,
-//             branch_display: common.getNexusBranchName(env.BRANCH_NAME),
-//             repo: common.getNexusRepo(),
-//             group: common.getNexusGroup(),
-//             nexus: NEXUS_URL,
-//             version: common.buildVersionName()
-//           ])
         }
 
         stage('Clean') {
