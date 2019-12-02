@@ -10,10 +10,10 @@ node {
 //   environment {
 //
 //       registry = "nexus.wako057.net:18442/marvel-front-ng"
-//       registryCredential = "9a37329c-39f3-47c0-b173-e0321f9225d3"
+//       registryCredential = "d831ccda-472f-4bd5-b3ad-e39ea1628d27"
 //   }
 
-  docker.withRegistry("http://nexus.wako057.net") {
+  docker.withRegistry("http://nexus.wako057.net:18442", 'cc1aa518-b1d0-466e-a4e7-c536fb0f1563') {
     wrap([$class: 'AnsiColorBuildWrapper']) {
       // Define docker image for slave
       def slave = docker.image('nexus.wako057.net:18442/marvel-front-ng:1.0')
