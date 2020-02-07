@@ -29,10 +29,13 @@ node {
       slave.inside {
         stage('Init vars') {
           if (params.BUILD_TYPE && params.BUILD_TYPE == 'release') {
+            echo("[Init vars]: ${params.BUILD_TYPE}")
             env.BUILD_TYPE = params.BUILD_TYPE
             env.MAJOR_VERSION = params.MAJOR_VERSION
             env.MINOR_VERSION = params.MINOR_VERSION
             env.PATCH_VERSION = params.PATCH_VERSION
+          } else {
+            echo("[Init vars]: ${params.BUILD_TYPE}")
           }
 
           APP_COMMIT = git.getCommitHash()
