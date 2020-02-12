@@ -28,6 +28,12 @@ node {
 
       slave.inside {
         stage('Init vars') {
+
+          echo("[Init vars][BUILD_TYPE]: ${params.BUILD_TYPE}")
+          echo("[Init vars][MAJOR_VERSION]: ${params.MAJOR_VERSION}")
+          echo("[Init vars][MINOR_VERSION]: ${params.MINOR_VERSION}")
+          echo("[Init vars][PATCH_VERSION]: ${params.PATCH_VERSION}")
+
           if (params.BUILD_TYPE && params.BUILD_TYPE == 'release') {
             echo("[Init vars]: ${params.BUILD_TYPE}")
             env.BUILD_TYPE = params.BUILD_TYPE
