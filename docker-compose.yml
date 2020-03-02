@@ -3,6 +3,7 @@ version: '3.7'
 services:
 
   marvel-front-ng:
+    container_name: marvel-front-ng
     build: ${MARVEL_FRONT_PATH:-.}/docker
     image: nexus.wako057.net:18442/marvel-front-ng:1.0
     volumes:
