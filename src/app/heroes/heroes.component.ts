@@ -4,7 +4,7 @@ import { HeroService } from '../services/hero.service';
 import { AccessMarvel } from '../access-marvel';
 import { HeroAnswerData } from '../hero-answer-data';
 import { PaginatorInfos } from '../paginatorInfos';
-import { PageEvent } from '@angular/material';
+import { PageEvent } from '@angular/material/paginator';
 import {MessageService} from '../services/message.service';
 
 

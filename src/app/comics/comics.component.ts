@@ -3,8 +3,8 @@ import { ComicService } from '../services/comic.service';
 import { PaginatorInfos } from '../paginatorInfos';
 import { ComicAnswerData } from '../comic-answer-data';
 import { Comic } from '../comic';
-import {AccessMarvel} from "../access-marvel";
-import {PageEvent} from "@angular/material";
+import {AccessMarvel} from '../access-marvel';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-comics',
