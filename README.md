@@ -17,10 +17,10 @@ ou
 
 ## Docker
 
-### Wakodock
+### Mydocker
 
-- wakodock marvel build marvel-front-ng
-- wakodock marvel push marvel-front-ng
+- mydocker marvel build marvel-front-ng
+- mydocker marvel push marvel-front-ng
 
 
 ### Docker classic
